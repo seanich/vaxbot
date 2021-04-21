@@ -1,0 +1,34 @@
+{
+  "name": "vaxbot",
+  "version": "0.1.0",
+  "main": "dist/index.ts",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.21",
+    "sodium": "^3.0.2",
+    "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.41",
+    "@types/ws": "^7.4.1",
+    "concurrently": "^6.0.2",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run watch-ts\" \"npm run watch-node\" \"npm run watch-webserver\"",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "tsc": "tsc",
+    "start": "node dist/index.js"
+  },
+  "engines": {
+    "node": "^14.x"
+  }
+}
